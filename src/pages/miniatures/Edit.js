@@ -12,6 +12,7 @@ const Edit = () => {
     const [miniature, setMiniature] = useState(null)
 
     let token = localStorage.getItem('token')
+    console.log()
 
     useEffect(() => {
         axios.get(`http://localhost:9000/miniatures/${id}`, {
