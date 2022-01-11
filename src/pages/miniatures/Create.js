@@ -1,3 +1,6 @@
+//This is the create.js page where a new miniature is created and sent to the database.
+
+//These are our imports
 import {useState} from 'react'
 import axios from 'axios'
 import {TextField, MenuItem, FormControl, Select, InputLabel, Button, Checkbox} from '@mui/material'
@@ -8,6 +11,8 @@ import { Grid } from '@material-ui/core'
 import { Card, CardMedia } from '@material-ui/core'
 import { Box } from '@material-ui/core'
 
+
+//This is the create const which contains the entire page.
 const Create = () => {
 
     let navigate = useNavigate()
@@ -23,6 +28,10 @@ const Create = () => {
 
     }
 
+    //This is the submit form function which will require a token to access
+    //It uses an axios interceptor to monitor between the response and the catch. 
+    //It is a post request, which will create a new miniature with a name, faction, price, inPrint, inStock variables and a new id.
+    //Once submitted it will navigate the user back to the miniature id page showing the miniature they just created.
     const submitForm = () => {
         console.log(form)
 
@@ -64,7 +73,8 @@ const Create = () => {
                 console.log(err.response)
             })
     }
-
+//This is the return which displays the background image, then uses breakpoints to add a "margin" to the form within the card component.
+//It uses text fields for each miniature data type before submitting the form using a button that links to the submitForm function
     return (
  
                   <Box
@@ -145,5 +155,5 @@ const Create = () => {
              
     )
 }
-
+//This is then exported
 export default Create

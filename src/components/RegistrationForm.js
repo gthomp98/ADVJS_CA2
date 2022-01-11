@@ -1,3 +1,6 @@
+//This is the register form, which mirrors the login form bar a couple of differences.
+
+//Here is our imports
 import { useState } from "react";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
@@ -13,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import { Button } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+//This is the registration function which contains everything in the page.
 const RegistrationForm = () => {
     const theme =createTheme();
 
@@ -27,11 +31,13 @@ const RegistrationForm = () => {
       [e.target.name]: e.target.value
     }))
   }
-
+//This is the submit form function but it is slightly different to the login form function. 
+//It is also a post, however it doesnt respond with any authentication, and the post works differently as it is simply inputting new data into a new user object.
   const submitForm = () => {
     console.log(form)
 
     axios.post('http://localhost:9000/users/register', {
+      //it also has a username field which the login does not
         username: form.username,
         email: form.email,
         password: form.password,
@@ -43,12 +49,7 @@ const RegistrationForm = () => {
       })
       .catch(err => console.log(err))
   }
-
-  let btnStyles = {
-    backgroundColor: "yellow",
-    fontWeight: "bold",
-  };
-
+//Everything in this return is identical to the login form code besides the username textfield
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>

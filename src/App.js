@@ -1,3 +1,6 @@
+//This is the app page, which acts like the main hub of the app. All of our pages and components are drawn in here so they can all be accessed. Our routes are also set up here, showing which
+//pages can be accesed with and without the token meaning that anything within protected miniatures cannot be accessed
+
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -27,7 +30,7 @@ const App = () => {
       setAuthenticated(true);
     }
   }, []);
-
+//This function also setts the token to local storage so it can be accessed by the whole app, and removes it if not
   const onAuthenticated = (auth, token) => {
     setAuthenticated(auth);
     if (auth) {

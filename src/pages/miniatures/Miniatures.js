@@ -1,3 +1,4 @@
+
 import axios from 'axios'
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
@@ -12,7 +13,7 @@ import { grid } from '@mui/system';
 
 const Miniatures = () => {
   const [miniatures, setMiniatures] = useState(null)
-
+//This gets the list of miniatures from the server
   useEffect(() => {
       axios
       .get("http://localhost:9000/miniatures/")
@@ -24,23 +25,12 @@ const Miniatures = () => {
                console.log(`Error: ${err}`)
            })
        }, [])
-
+//Returns nothing if miniatures is empty
   if(!miniatures) return null;
-
+//The miniatures are mapped to a miniature object and stored in the miniatures list constant
   const miniaturesList = miniatures.map(miniature => {
-      // return (
-      //     <div key={miniature._id}>
-      //         <p>
-      //           <b>Name: </b> {" "}
-      //           <Link to={`/miniatures/${miniature._id}`}>{miniature.name}</Link>{" "}
-      //           </p>
-      //           <p>
-      //           <b>Faction: </b> {miniature.faction}{" "}
-      //           </p>
-      //         <hr />
-      //     </div>
-          
-      // )
+
+    //This is the return where there is a miniature id key stored so that when clicked the miniature name will link to the miniature show page of that id
     return(
       
       <div key={miniature._id}>
@@ -56,6 +46,7 @@ const Miniatures = () => {
             <Grid item xs>
               <Typography gutterBottom variant="name" component="div">
                 <p>
+                  {/* this is the link that goes to the miniature show page of that specific miniature */}
                 <Link to={`/miniatures/${miniature._id}`}>{miniature.name}</Link>{" "}
                 </p>
               </Typography>
@@ -104,7 +95,7 @@ const Miniatures = () => {
          </Typography>
     
 
-    
+    {/* This is the miniature create link that goes from the miniature list to the page for creating a new miniature */}
       <Link to="create">Create</Link>
     {miniaturesList}
 

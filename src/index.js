@@ -1,3 +1,4 @@
+//This is the index.js for the app, its sole purpose is to render the dom
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";

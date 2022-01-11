@@ -1,3 +1,5 @@
+//This is the about page, a simple page that is primarilly designed just to have a card with some text in it showing off a little bit of detail about the store.
+
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -28,7 +30,6 @@ const About = props => {
           <Box
             sx={{
               backgroundColor: "white",
-              opacity:0.7,
               my: 20,
               mx: 24,
               display: 'flex',

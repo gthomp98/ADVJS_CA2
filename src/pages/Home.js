@@ -1,3 +1,5 @@
+//This is the home page, the first page you are greeted with. it has a simple message and image to welcome you to the site.
+
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -28,7 +30,6 @@ const Home = props => {
           <Box
             sx={{
               backgroundColor: "white",
-              opacity:0.7,
               my: 20,
               mx: 24,
               display: 'flex',
