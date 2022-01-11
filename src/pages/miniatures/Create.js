@@ -2,6 +2,11 @@ import {useState} from 'react'
 import axios from 'axios'
 import {TextField, MenuItem, FormControl, Select, InputLabel, Button, Checkbox} from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { Typography } from '@material-ui/core'
+
+import { Grid } from '@material-ui/core'
+import { Card, CardMedia } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 
 const Create = () => {
 
@@ -61,35 +66,83 @@ const Create = () => {
     }
 
     return (
-        <div>
-            <h2>Create</h2>
-
-            <div className="form-group">
-            <TextField variant="filled" label="Name" name="name" onChange={handleForm} />
-            </div>
-
-            <div className="form-group">
-                <TextField variant="filled" label="Faction" name="faction" onChange={handleForm} />
-            </div>
-
-            <div className="form-check">
-            <label className="form-check-label" name="inPrint">In Print</label>
-            <Checkbox className="form-check-input" name="inPrint" checked= {true} onChange={handleForm} required/>
-            </div>
-
-            <div className="form-group">
-                <TextField input-type="number" variant="filled" label="Price" name="price" onChange={handleForm} />
-            </div>
-
-            <div className="form-check">
-            <label className="form-check-label" name="inStock">In Stock</label>
-            <Checkbox className="form-check-input"  name="inStock" checked= {true} onChange={handleForm} required/>
-            </div>
+ 
+                  <Box
+            sx={{
+              backgroundImage: 'url(https://images7.alphacoders.com/868/868312.jpg)',
+               height:2000,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+              <br>
+              </br>
+              <br>
+              </br>
+              <br>
+              </br>
+              <br>
+              </br>
+              <br>
+              </br>
+              
+         <Card align="center"  >   
+  <Typography component="h1" variant="h5">
+              Create a new Miniature
+            </Typography>
+              <TextField
+                margin="normal"
+                required
+                fullwidth="true"
+                id="name"
+                label="Name"
+                name="name"
+                autoComplete="name"
+                autoFocus
+                onChange={handleForm}
+              />
+              <br>
+              </br>
+              <TextField
+                margin="normal"
+                required
+                fullwidth="true"
+                name="faction"
+                label="Faction"
+                type="faction"
+                id="faction"
+                autoComplete="faction"
+                onChange={handleForm}
+              />
+               <br>
+               </br>
+               <TextField
+                margin="normal"
+                required
+                fullwidth="true"
+                name="price"
+                label="Price"
+                type="price"
+                id="price"
+                autoComplete="price"
+                onChange={handleForm}
+              />
+              <br>
+              </br>
         
-   
-<Button onClick={submitForm} variant="contained">Submit</Button>
-
-            </div>      
+              <Button 
+                onClick={submitForm}
+                fullwidth="true"
+                variant="outlined"
+                bgcolor="#800080"
+                sx={{ mt: 3, mb: 2 }}
+              >
+               Submit
+              </Button>
+              </Card>
+             </Box>
+             
     )
 }
 
